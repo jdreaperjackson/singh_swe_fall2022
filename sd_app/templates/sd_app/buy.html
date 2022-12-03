@@ -1,0 +1,16 @@
+{% extends "sd_app/base.html" %}
+    
+{% block content %}
+<h2> Reservation Form</h2>
+<body>  
+    <form method="POST" action="{% url 'sd_app:buy' %}">
+        {% csrf_token %}
+        {{ buy_form.as_p }}
+        <p>User Address: {{ address_1 }}, {{ address_2 }}, {{ city }}, {{ state }} {{ zipcode }} </p>
+        <button type="submit" name="submit">Submit Reservation</button>
+       
+    </form>
+ 
+</body>
+    
+{% endblock content %}

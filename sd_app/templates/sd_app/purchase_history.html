@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+    {% extends "sd_app/base.html" %}
+
+    {% block content %}
+    <style>
+        table {
+            border-collapse: collapse;            
+        }
+        
+    </style>
+<body>
+    <h3>Logged in as: {{ user.username }}</h3>
+    <h2>Upcoming Reservations</h2>
+
+    <table border="1">
+        <tr>
+            <td>&nbsp;Number of People&nbsp;</td>
+            <td>&nbsp;Reservation Date&nbsp;</td>
+            <td>&nbsp;Reservation Time&nbsp;</td>
+            <td>&nbsp;Preferred Payment Method&nbsp;</td>
+            <td>&nbsp;User Phone Number&nbsp;</td>
+            <td>&nbsp;User Email&nbsp;</td>
+            <td>&nbsp;User Address 1&nbsp;</td>
+            <td>&nbsp;User Address 2&nbsp;</td>
+            <td>&nbsp;User City&nbsp;</td>
+            <td>&nbsp;User State&nbsp;</td>
+            <td>&nbsp;User Zipcode&nbsp;</td>
+
+        </tr>
+        {% for item in purchases %}
+        <tr>
+            <td>{{ item.number_of_people }}</td>
+            <td>{{ item.reservation_date }}</td>
+            <td> {{ item.reservation_time }}</td>
+            <td>{{ item.preferred_payment_method }}</td>
+            <td> {{ item.user_phone_number }}</td>
+            <td> {{ item.user_email }}</td>
+            <td> {{ item.address_1 }}</td>
+            <td> {{ item.address_2 }}</td>
+            <td> {{ item.city }}</td>
+            <td> {{ item.state }}</td>
+            <td> {{ item.zipcode }}</td>
+
+        </tr>
+        {% endfor %}
+    </table>
+
+</body>
+    {% endblock content %}
+
+</html>

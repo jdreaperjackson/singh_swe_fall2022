@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+{% extends "sd_app/base.html" %}
+
+{% block content %}
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h2>Profile</h2>    
+    <h3>{{ user.username }}</h3>
+    <form action="{% url 'sd_app:profile' %}" method="POST">
+        {% csrf_token %}        
+        {{ profile_form.as_p }}
+        <button class="btn btn-primary" type="submit">Save / Update Profile</button>
+    </form>
+    <br>
+    
+</body>
+</html>
+{% endblock %}
