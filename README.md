@@ -24,10 +24,6 @@ MIGRATE
 
 python3 manage.py migrate
 
-CREATE SUPERUSER
-
-python3 manage.py createsuperuser
-
 RUN
 
 python3 manage.py runserver
